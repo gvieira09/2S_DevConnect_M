@@ -1,0 +1,49 @@
+main{
+    background-color: #5a929b;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+main > div{
+    background-color: rgb(233, 240, 242);
+    max-width: 342px;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*justify-content: space-between;*/
+    gap: 25px;
+}
+
+form{
+   /* background-color: #5d7b9f;
+*/}
+
+#secao-cadastro{
+  /*  background-color: var(--cor-cinza-claro);
+*/}
+
+.estilo-formulario{
+    background-color: #869db7;
+    border: var(--borda);
+    width: 100%;
+}
+
+main > div > p{
+    background-color: #5d7b9f;
+    
+}
+
+#secao-instalacao{
+    background-color: #8396ae;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
