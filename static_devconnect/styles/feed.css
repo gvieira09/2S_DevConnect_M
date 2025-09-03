@@ -7,10 +7,13 @@ main{
 }
 
 .container-flex-publi{
-    background-color: rgb(91, 109, 125);
-    height: 700px;
+    background-color: rgb(255, 255, 255);
+   /* height: 700px;*/
     width: 90%;
     max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 #storys{
@@ -53,6 +56,119 @@ main{
 } 
 
 .formulario-botao-azul{
-    width: 150px;
+    width: 135px;
     
+}
+
+#criar-publi{
+    padding: 10px;
+}
+
+#criar-publi>h2{
+    color: var(--cor-azul-marinho);
+    font-size: var(--tamanho-fonte-lg);
+    font-weight: 700;
+}
+
+#criar-publi>form>textarea{
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    resize: none;    
+    border: var(--borda);
+}
+
+#criar-publi>form>textarea::placeholder{
+    color: var(--cor-azul-marinho);
+}
+
+#criar-publi > form > footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 30px; 	
+    justify-content: flex-end;
+}
+
+#publicacoes{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+}
+
+.card-publi{
+    background-color: rgb(133, 156, 186);
+    width: 100%;
+   /* height: 600px;*/    
+   display: flex;
+    flex-direction: column;
+
+
+}
+
+
+.card-publi>header{
+
+    padding: 3%;
+}
+
+.card-publi>header>a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.card-publi>figure{
+    display: flex;
+    flex-direction: column;
+}
+
+.imagem-publicacao{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 400px;
+}
+.card-publi>figure>figcaption{
+    color: var(--cor-azul-marinho);
+    font-size: var(--tamanho-fonte-md);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    order: 2;
+    margin: 15px;
+}
+
+.descricao-publicacao{
+    font-size: var(--tamanho-fonte-sm);
+    font-weight: 400;
+}
+
+.interacoes-publicacao{
+    display: flex;
+    width: 98px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    order: 1;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.interacoes-publicacao>button{
+    background-color: transparent;
+    border: none;
+}
+
+.card-publi>figure>button{
+    background-color: transparent;
+    border: none;
+
+    color: var(--cor-cinza-claro);
+    font-size: var(--tamanho-fonte-sm);
+    order: 3;
+    margin-left: 15px;
 }
