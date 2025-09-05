@@ -1,0 +1,165 @@
+body {
+    margin: none;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fffefe;
+  }
+  
+  #cabecalho {
+    background: #f9f9f9;
+    padding: 10px 20px;
+;
+  }
+  
+  #cabecalho>nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #cabecalho>img {
+    height: 35px;
+  }
+  
+  .cabecalho-acoes {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .foto-perfil-sm {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  #perfil {
+    max-width: 950px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  .perfil-info {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    border-bottom: 1px solid var(--cor-azul-marinho) ;
+    padding-bottom: 35px;
+  }
+  
+  .foto-perfil {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .perfil-dados {
+    flex: 1;
+  }
+  
+  .perfil-topo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .perfil-topo>h2 {
+    font-size: 24px;
+  }
+  
+  
+  .perfil-estatisticas {
+    display: flex;
+    gap: 30px;
+
+  
+  }
+  
+  .perfil-estatisticas>li {
+    list-style: none;
+  }
+  
+  .perfil-bio {
+    margin: 3px 0;
+   
+  }
+  
+  .botao{
+    background-color: transparent;
+    border: none;
+    color: rgb(2, 167, 243);
+    padding-right: 50px;
+  }
+
+.botao-bio{
+    display: flex;
+    gap: 30px;  
+}
+
+.publicacao-cabecario{
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 15px   ;
+}
+
+
+.posts {
+    max-width: 600px;
+    margin: 0 auto 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post-texto {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.post>h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color:var(--cor-preto);
+}
+
+.post>p {
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.actions>img {
+    height: 22px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.actions>img {
+    transform: scale(1.2);
+}
+
+.likes {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.comentarios {
+    color:var(--cor-cinza-medio);
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.comentarios:hover {
+    text-decoration: underline;
+}
