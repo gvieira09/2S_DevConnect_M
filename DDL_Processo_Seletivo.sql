@@ -2,13 +2,13 @@
 USE db_devconnect;
 
 CREATE TABLE tb_usuario (
-id              INT        IDENTITY PRIMARY KEY
+id              INT        IDENTITY(1,1) PRIMARY KEY
 nome_completo              NVARCHAR (200)                        NOT NULL,
 nome_ususario              NVARCHAR (70)                         NOT NULL,
 email                      NVARCHAR (70) UNIQUE                  NOT NULL,
 senha                      NVARCHAR (40)                         NOT NULL,
 data_cadastro              DATE                                  NOT NULL,
-foto_perfil_url            NVARCHAR (180)                        NULL
+foto_perfil_url            NVARCHAR (180)                        NULL,
 );
 GO
 
@@ -53,12 +53,12 @@ GO
 SELECT * FROM tb_comentario;
 
 CREATE TABLE tb_seguidor (
-	id_usuario	    INT		NOT NULL,
-	id_seguir	    INT		NOT NULL,
+	id_usuario_seguidor	    INT		NOT NULL,
+	id_seguindo	    INT		NOT NULL,
 	
-	PRIMARY KEY(id_turma, id_prova)
-	id_usuario	    INT	FOREIGN KEY REFERENCES tb_usuario(id)
-	id_seguir	    INT	FOREIGN KEY REFERENCES tb_seguidor(id)
+	PRIMARY KEY(id_usuario_seguidor, id_seguindo)
+	FOREIGN KEY id_usuario_seguidor	    	 REFERENCES tb_usuario(id),
+	FOREIGN KEY id_seguir_seguindo	    	 REFERENCES tb_seguidor(id)
 );
 GO
 
