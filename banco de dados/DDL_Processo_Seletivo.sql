@@ -1,65 +1,49 @@
 --DDL
+CREATE DATABASE db_devconnect;
+GO
 USE db_devconnect;
 
-CREATE TABLE tb_usuario (
-id              INT        IDENTITY(1,1) PRIMARY KEY
-nome_completo              NVARCHAR (200)                        NOT NULL,
-nome_ususario              NVARCHAR (70)                         NOT NULL,
-email                      NVARCHAR (70) UNIQUE                  NOT NULL,
-senha                      NVARCHAR (40)                         NOT NULL,
-data_cadastro              DATE                                  NOT NULL,
-foto_perfil_url            NVARCHAR (180)                        NULL,
+CREATE TABLE tb_usuario(
+	ID_Usuario		INT				IDENTITY(1,1)		PRIMARY KEY
+	,nome_completo	NVARCHAR(200)						NOT NULL
+	,nome_usuario	NVARCHAR(55)	UNIQUE				NOT NULL
+	,email			NVARCHAR(200)	UNIQUE				NOT NULL
+	,senha			NVARCHAR(80)						NOT NULL
+	,foto_perfl_url	NVARCHAR(200)						NULL
 );
-GO
 
-SELECT * FROM tb_ususario;
-
-CREATE TABLE tb_publicacao (
-id              INT        IDENTITY PRIMARY KEY
-descricao                  NVARCHAR (100)                        NOT NULL,
-imagem_url                 NVARCHAR (180)                        NOT NULL,
-data_publicacao            DATE                                  NOT NULL,
-
-id_usuario	INT	FOREIGN KEY REFERENCES tb_usuario(id)
+CREATE TABLE tb_publi(
+	ID_Publi		INT				IDENTITY(1,1)		PRIMARY KEY
+	,descricao		NVARCHAR(200)						NOT NULL
+	,imagem_url		NVARCHAR(200)						NULL
+	,data_publi		DATE								NOT NULL
 );
-GO
 
-SELECT * FROM tb_publicacao;
+CREATE TABLE tb_curtidas(
+	ID_Curtidas		INT				IDENTITY(1,1)		PRIMARY KEY
+	,ID_Usuario		INT									NOT NULL
+	,ID_Publi		INT									NOT NULL
 
-CREATE TABLE tb_curtida (
-id_usuario                 INT                                    NOT NULL,
-id_publicacao              INT                                    NOT NULL,
-
-id_usuario	INT	FOREIGN KEY REFERENCES tb_usuario(id)
-id_publicacao	INT	FOREIGN KEY REFERENCES tb_publicacao(id)
+	FOREIGN KEY(ID_Usuario) REFERENCES tb_usuario(ID_Usuario),
+	FOREIGN KEY(ID_Publi)	REFERENCES tb_publi(ID_Publi),
 );
-GO
 
-SELECT * FROM tb_curtida;
+CREATE TABLE tb_comentarios(
+	ID_Comentarios	INT				IDENTITY(1,1)		PRIMARY KEY
+	,texto			NVARCHAR(500)						NOT NULL
+	,data_coment	DATE								NOT NULL
+	,ID_Usuario		INT									NOT NULL
+	,ID_Publi		INT									NOT NULL
 
-CREATE TABLE tb_comentario (
-texto                     NVARCHAR (700)                         NOT NULL,
-data_comentario           DATE                                   NOT NULL,
-id_comentario             INT                                    NOT NULL,
-id_usuario                INT                                    NOT NULL,
-id_publicacao             INT                                    NOT NULL,
-,
-id_usuario	    INT	FOREIGN KEY REFERENCES tb_usuario(id)
-id_publicacao	INT	FOREIGN KEY REFERENCES tb_publicacao(id)
-id_comentario	INT	FOREIGN KEY REFERENCES tb_comentario(id)
+	FOREIGN KEY(ID_Usuario) REFERENCES tb_usuario(ID_Usuario),
+	FOREIGN KEY(ID_Publi) REFERENCES tb_publi(ID_Publi),
 );
-GO
 
-SELECT * FROM tb_comentario;
-
-CREATE TABLE tb_seguidor (
-	id_usuario_seguidor	    INT		NOT NULL,
-	id_seguindo	    INT		NOT NULL,
+CREATE TABLE tb_seguidor(
+	ID_UsuarioSeguidor	INT								NOT NULL
+	,ID_Usuario			INT								NOT NULL
+	PRIMARY KEY (ID_UsuarioSeguidor, ID_Usuario),
 	
-	PRIMARY KEY(id_usuario_seguidor, id_seguindo)
-	FOREIGN KEY id_usuario_seguidor	    	 REFERENCES tb_usuario(id),
-	FOREIGN KEY id_seguir_seguindo	    	 REFERENCES tb_seguidor(id)
+	FOREIGN KEY(ID_UsuarioSeguidor) REFERENCES tb_usuario(ID_Usuario),
+	FOREIGN KEY(ID_Usuario)	REFERENCES tb_usuario(ID_Usuario),
 );
-GO
-
-SELECT * FROM tb_seguidor;

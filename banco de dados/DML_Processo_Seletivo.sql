@@ -1,34 +1,20 @@
 --DML
 USE db_devconnect;
 
-INSERT INTO tb_usuario(NomeCompleto, NomeUsuario, Email, Senha, FotoPerfilurl)
-VALUES('Guilherme Vieira', 'ogvieiraa', 'ogvieiraa@gmail.com', '123', 'www.fotovieira.co.br');
+INSERT INTO tb_usuario(nome_completo, nome_usuario, email, senha, foto_perfl_url)
+VALUES
+('Guilherme Vieira', 'ogvieiraa', 'ogvieiraa@gmail.com', 'OG0LK', 'www.fotoperfilvieira/LINK'),
+('Milena Mares', 'marezx', 'maresmika@25', 'BATATA777', 'www.fotoperfildevgram/Mika'),
+('Julio Cesar', 'blessed_byjulio', 'juliodocod@gmail.com', 'meupaicego88', 'www.fotoperfilju/Transk');
 
-SELECT * FROM tb_usuario;
+INSERT INTO tb_publi(descricao, imagem_url, data_publi)
+VALUES('bday my bro!', 'www.fotocomamigos', '2025/02/25');
 
-INSERT INTO tb_publicacao(Descricao, ImagemURL, DataPublicacao, Publicacaoid, Usuarioid)
-VALUES('Hoje n deu', 'www.hojenaodeu.com.br', '2025/04/22' 1);
+INSERT INTO tb_curtidas(ID_Usuario, ID_Publi)
+VALUES(1, 1);
 
-SELECT * FROM tb_publicacao;
+INSERT INTO tb_comentarios(texto, data_coment, ID_Usuario, ID_Publi)
+VALUES('Deus abençõe a nossa união!', '2024/08/31', 1, 1);
 
-INSERT INTO tb_curtida(Curtidaid, Usuarioid, Publicacaoid)
-VALUES(2,1,7);
-
-SELECT * FROM tb_curtida;
-
-INSERT INTO tb_comentario(Texto, DataPublicacao, Comentarioid, Usuarioid, Publicacaoid)
-VALUES('Ontem tava sol, hoje ja ta chovendo', '2025/03/12', 2, 7);
-
-SELECT * FROM tb_comentario;
-
-INSERT INTO tb_seguidor(Usuarioid PK1, Seguindoid FK1, Seguindoid PK1, Seguindo FK1)
-VALUES(2,3,6,8);
-
-SELECT * FROM tb_seguidor;
-
-
-
-
-
-
-
+INSERT INTO tb_seguidor(ID_UsuarioSeguidor, ID_Usuario)
+VALUES(1, 1);
