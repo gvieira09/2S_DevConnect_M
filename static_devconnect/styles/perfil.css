@@ -1,165 +1,217 @@
+/* === PERFIL - DEVCONNECT === */
+
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
 body {
-    margin: none;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #fffefe;
-  }
-  
-  #cabecalho {
-    background: #f9f9f9;
-    padding: 10px 20px;
-;
-  }
-  
-  #cabecalho>nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  #cabecalho>img {
-    height: 35px;
-  }
-  
-  .cabecalho-acoes {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .foto-perfil-sm {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  #perfil {
-    max-width: 950px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  
-  .perfil-info {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    border-bottom: 1px solid var(--cor-azul-marinho) ;
-    padding-bottom: 35px;
-  }
-  
-  .foto-perfil {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .perfil-dados {
-    flex: 1;
-  }
-  
-  .perfil-topo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-  }
-  
-  .perfil-topo>h2 {
-    font-size: 24px;
-  }
-  
-  
-  .perfil-estatisticas {
-    display: flex;
-    gap: 30px;
-
-  
-  }
-  
-  .perfil-estatisticas>li {
-    list-style: none;
-  }
-  
-  .perfil-bio {
-    margin: 3px 0;
-   
-  }
-  
-  .botao{
-    background-color: transparent;
-    border: none;
-    color: rgb(2, 167, 243);
-    padding-right: 50px;
-  }
-
-.botao-bio{
-    display: flex;
-    gap: 30px;  
+  background-color: #f9f9f9;
+  color: #222;
 }
 
-.publicacao-cabecario{
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 15px   ;
+/* CABEÇALHO */
+#cabecalho {
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
+#cabecalho nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
 
+#logo-desktop {
+  height: 40px;
+}
+
+#logo-mobile {
+  display: none;
+  height: 36px;
+}
+
+.cabecalho-acoes {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cabecalho-acoes img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+
+/* PERFIL */
+#perfil {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.perfil-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.foto-perfil {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+
+.perfil-dados {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.perfil-topo h2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.perfil-estatisticas {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  font-size: 0.9rem;
+}
+
+.perfil-estatisticas li strong {
+  font-weight: 600;
+}
+
+.botao-bio {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.botao {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.2s;
+}
+
+.botao:hover {
+  background-color: #e0e0e0;
+}
+
+/* PUBLICAÇÕES */
+.publicacao-cabecario {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px 0 15px 0;
+  gap: 8px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  color: #333;
+}
+
+#logo-grade {
+  width: 22px;
+  height: 22px;
+}
+
+/* POSTS */
 .posts {
-    max-width: 600px;
-    margin: 0 auto 50px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .post-texto {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.post>h3 {
-    font-size: 16px;
-    margin-bottom: 8px;
-    color:var(--cor-preto);
+.post-texto h3 {
+  font-size: 1rem;
+  margin-bottom: 5px;
 }
 
-.post>p {
-    font-size: 14px;
-    margin: 6px 0;
+.post-texto p {
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
+  display: flex;
+  gap: 15px;
+  margin: 10px 0;
 }
 
-.actions>img {
-    height: 22px;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.actions>img {
-    transform: scale(1.2);
-}
-
-.likes {
-    font-weight: bold;
-    margin-top: 10px;
+.actions img {
+  width: 22px;
+  height: 22px;
 }
 
 .comentarios {
-    color:var(--cor-cinza-medio);
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 5px;
+  color: #999;
+  font-weight: 500;
 }
 
-.comentarios:hover {
-    text-decoration: underline;
+/* === MOBILE RESPONSIVO === */
+@media (max-width: 600px) {
+  #cabecalho nav {
+    padding: 10px;
+  }
+
+  #logo-desktop {
+    display: none;
+  }
+
+  #logo-mobile {
+    display: block;
+  }
+
+  .perfil-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .perfil-estatisticas {
+    justify-content: center;
+  }
+
+  .botao-bio {
+    justify-content: center;
+  }
+
+  .foto-perfil {
+    width: 110px;
+    height: 110px;
+  }
+
+  #perfil {
+    padding: 0 10px;
+  }
+
+  .post-texto {
+    padding: 12px;
+  }
 }
